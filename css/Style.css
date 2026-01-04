@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* Intro Page */
+.intro {
+    animation: zoomIn 2s ease;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/* Button */
+.btn {
+    margin-top: 30px;
+    padding: 12px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background: #ff6f61;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.btn:hover {
+    background: #ff3b2f;
+}
+
+/* Gallery Page */
+.gallery-page {
+    flex-direction: column;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 30px;
+    width: 80%;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Message Page */
+.message-page {
+    background: linear-gradient(120deg, #cfd9df, #e2ebf0);
+    color: #333;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.highlight {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ff6f61;
+}
+
+/* Animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
