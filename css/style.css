@@ -104,7 +104,12 @@ body.gallery-page {
   .gallery-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-
+/* ===== FORCE GALLERY BACKGROUND ===== */
+body.gallery-page {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #fff1eb, #ace0f9) !important;
+  display: block !important;
+}
   .img-card {
     max-width: 150px;
   }
