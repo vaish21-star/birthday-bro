@@ -1,5 +1,5 @@
-const titleText = "🎉 Happy Birthday, Brother 💙";
-const subtitleText = "Not by blood, but by heart. Always family.";
+const titleText = "Happy Birthday, Brother 💙";
+const subtitleText = "Not by blood, but by heart. Always family 🤍";
 
 let i = 0;
 let j = 0;
@@ -12,9 +12,9 @@ function typeTitle() {
     if (i < titleText.length) {
         title.innerHTML += titleText.charAt(i);
         i++;
-        setTimeout(typeTitle, 90);
+        setTimeout(typeTitle, 80);
     } else {
-        setTimeout(typeSubtitle, 700);
+        setTimeout(typeSubtitle, 500);
     }
 }
 
@@ -26,7 +26,7 @@ function typeSubtitle() {
     } else {
         setTimeout(() => {
             btn.style.display = "inline-block";
-        }, 1000);
+        }, 700);
     }
 }
 
