@@ -188,3 +188,70 @@ p {
     display: inline-block;
     margin-top: 25px;
 }
+/* =========================
+   GALLERY PAGE FIXED LOOK
+========================= */
+
+.gallery-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff1eb, #ace0f9);
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 26px;
+    color: #c44569;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* GRID – MOBILE FIRST */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* IMAGE CARD */
+.img-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* IMAGE */
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BUTTON FIX */
+.gallery-btn {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+/* SMALL ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET / DESKTOP */
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
