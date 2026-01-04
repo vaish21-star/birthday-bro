@@ -1,101 +1,32 @@
-/* =========================
-   GLOBAL RESET
-========================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   COMMON BODY
-========================= */
+/* COMMON */
 body {
-  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
-}
-
-/* =========================
-   INTRO / HOME PAGE
-========================= */
-body:not(.gallery-page):not(.message-page) {
-  background: linear-gradient(135deg, #fff1eb, #ace0f9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-/* CENTER CARD */
-.container {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.65);
-  padding: 40px 25px;
-  border-radius: 25px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  max-width: 90%;
-  animation: fadeIn 1.8s ease;
-}
-
-/* TITLE */
-h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 36px;
-  color: #c44569;
-  margin-bottom: 15px;
-}
-
-/* SUBTITLE */
-p {
-  font-size: 16px;
-  color: #555;
-}
-
-/* BUTTON (COMMON) */
-.btn {
-  margin-top: 25px;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 30px;
-  background: linear-gradient(45deg, #ff758c, #ff7eb3);
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
-  display: none;
-  box-shadow: 0 10px 20px rgba(255, 117, 140, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.btn:hover {
-  transform: scale(1.08);
-}
-
-/* FLOATING EMOJIS */
-.floating::before {
-  content: "💗 💕 💖 🦋 ✨";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  font-size: 22px;
-  animation: float 18s linear infinite;
-  opacity: 0.25;
 }
 
 /* =========================
    GALLERY PAGE
 ========================= */
 body.gallery-page {
+  min-height: 100vh;
   background: linear-gradient(135deg, #fff1eb, #ace0f9);
-  display: block !important;
 }
 
+/* WRAPPER */
 .gallery-wrapper {
   max-width: 900px;
-  margin: 0 auto;
+  margin: auto;
   padding: 30px 20px;
   text-align: center;
 }
 
+/* TITLE */
 .gallery-title {
   font-size: 26px;
   color: #c44569;
@@ -111,25 +42,61 @@ body.gallery-page {
   justify-items: center;
 }
 
-/* IMAGE CARDS */
-.gallery-grid img {
+/* IMAGE CARD */
+.img-card {
+  position: relative;
   width: 100%;
   max-width: 120px;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
   border-radius: 18px;
+  overflow: hidden;
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.05);
+/* IMAGE */
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* GALLERY BUTTON */
-.gallery-btn {
-  display: inline-block !important;
+/* TEXT (HIDDEN) */
+.img-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+  font-size: 11px;
+  color: white;
+  text-align: center;
+  font-weight: 500;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0)
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* SHOW ON TAP */
+.img-card.active .img-text {
+  opacity: 1;
+}
+
+/* BUTTON */
+.btn {
   margin-top: 30px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(255, 117, 140, 0.4);
 }
 
 /* RESPONSIVE */
@@ -138,81 +105,11 @@ body.gallery-page {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .gallery-grid img {
+  .img-card {
     max-width: 150px;
   }
-}
 
-/* =========================
-   MESSAGE PAGE
-========================= */
-body.message-page {
-  background: linear-gradient(135deg, #d9afd9, #97d9e1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* MESSAGE CARD */
-.message-card {
-  background: rgba(255,255,255,0.88);
-  padding: 35px 25px;
-  border-radius: 25px;
-  max-width: 90%;
-  text-align: center;
-  box-shadow: 0 25px 45px rgba(0,0,0,0.18);
-  animation: fadeUp 1.6s ease;
-}
-
-.message-card h2 {
-  font-family: 'Pacifico', cursive;
-  font-size: 28px;
-  color: #b33939;
-  margin-bottom: 15px;
-}
-
-.message-card p {
-  font-size: 15px;
-  color: #444;
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-.message-card .highlight {
-  font-weight: 500;
-  color: #c44569;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(-100%);
+  .img-text {
+    font-size: 12px;
   }
 }
