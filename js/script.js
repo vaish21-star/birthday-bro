@@ -30,3 +30,6 @@ function typeSubtitle() {
 }
 
 typeTitle();
+function toggleText(card) {
+  card.classList.toggle("active");
+}
