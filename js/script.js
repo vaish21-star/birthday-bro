@@ -1,6 +1,5 @@
-const titleText = "Happy Birthday, Brother 💙";
-const subtitleText = "Not by blood, but by heart. Always family 🤍";
-
+const titleText = "Happy Birthday, Mineee Annnaaaaa 🫀🫂🧿";
+const subtitleText = "Not by blood, but by soul. My forever Annnaaa 🫂🫀🥹";
 let i = 0;
 let j = 0;
 
